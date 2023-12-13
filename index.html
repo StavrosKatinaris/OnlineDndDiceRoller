@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD Dice Roller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>DnD Dice Roller</h1>
+    <label for="diceExpression">Enter your dice expression:</label>
+    <input type="text" id="diceExpression">
+    <button onclick="rollDice()">Roll!</button>
+    <p id="result"></p>
+
+    <!-- Predetermined Roll Buttons -->
+    <div class="button-grid">
+        <button onclick="rollPreset('1d20')">Roll a d20</button>
+        <button onclick="rollPreset('1d12')">Roll a d12</button>
+        <button onclick="rollPreset('1d10')">Roll a d10</button>
+        <button onclick="rollPreset('1d8')">Roll a d8</button>
+        <button onclick="rollPreset('1d6')">Roll a d6</button>
+        <button onclick="rollPreset('1d4')">Roll a d4</button>
+    </div>
+
+    <!-- Clear History Button -->
+    <button onclick="clearHistory()">Clear History</button>
+
+    <!-- View History Button -->
+    <button onclick="viewHistory()">View History</button>
+
+    <!-- Modal for Roll History -->
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <h2>Roll History</h2>
+            <div id="historyModalContent" class="history-container"></div>
+        </div>
+        <span class="close" onclick="closeModal()">&times;</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
